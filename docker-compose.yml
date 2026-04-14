@@ -1,0 +1,20 @@
+version: "3.9"
+
+services:
+  nlp-review-intelligence:
+    build: .
+    container_name: nlp-review-intelligence
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+      - ./logs:/app/logs
+      # Mount HuggingFace cache to avoid re-downloading on restart
+      - huggingface_cache:/root/.cache/huggingface
+    env_file:
+      - .env
+    restart: unless-stopped
+
+volumes:
+  huggingface_cache:

@@ -1,0 +1,26 @@
+# Transformers (CPU-only)
+transformers>=4.40.0
+torch>=2.2.0
+
+# Classical NLP
+scikit-learn>=1.4.0
+joblib>=1.3.0
+
+# Topic extraction
+spacy>=3.7.0
+# After install run: python -m spacy download en_core_web_sm
+
+# Data
+numpy>=1.26.0
+pandas>=2.0.0
+
+# Visualisation
+plotly>=5.20.0
+streamlit>=1.35.0
+
+# Utilities
+python-dotenv>=1.0.0
+
+# Dev & testing
+pytest>=8.0.0
+pytest-cov>=4.1.0

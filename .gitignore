@@ -1,0 +1,36 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+.venv/
+venv/
+env/
+*.DS_Store
+
+# Model weights and tokenizer files (large — use Git LFS or release assets)
+models/bert_sentiment/
+models/*.joblib
+models/label_map.json
+models/model_comparison.json
+models/checkpoints/
+
+# Data
+data/sample/
+data/*.csv
+data/*.npy
+
+# Logs
+logs/
+*.log
+
+# HuggingFace cache
+.cache/
+
+# Jupyter
+.ipynb_checkpoints/
+notebooks/.ipynb_checkpoints/
+
+# Coverage
+.coverage
+htmlcov/
+.pytest_cache/
