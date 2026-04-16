@@ -1,6 +1,6 @@
 """
-models/tfidf_classifier.py
---------------------------
+tfidf_classifier.py
+-------------------
 TF-IDF + Logistic Regression baseline classifier.
 
 Purpose:

@@ -1,7 +1,7 @@
 """
 tests/test_models.py
 --------------------
-Unit tests for models/tfidf_classifier.py and models/bert_classifier.py.
+Unit tests for tfidf_classifier.py and bert_classifier.py.
 
 TF-IDF tests: full fit + predict cycle (no network needed).
 BERT tests:   interface validation only — building the full model
@@ -22,7 +22,7 @@ import pandas as pd
 import pytest
 
 from config import SENTIMENT_LABELS, TFIDFConfig
-from models.tfidf_classifier import TFIDFSentimentClassifier
+from tfidf_classifier import TFIDFSentimentClassifier
 
 
 # ── TF-IDF Classifier ─────────────────────────────────────────────────────────
@@ -131,25 +131,25 @@ class TestBERTClassifierInterface:
     """
 
     def test_instantiation(self):
-        from models.bert_classifier import BERTSentimentClassifier
+        from bert_classifier import BERTSentimentClassifier
         clf = BERTSentimentClassifier()
         assert clf.model is None
         assert clf.tokenizer is None
 
     def test_predict_before_build_raises(self):
-        from models.bert_classifier import BERTSentimentClassifier
+        from bert_classifier import BERTSentimentClassifier
         clf = BERTSentimentClassifier()
         with pytest.raises(RuntimeError, match="not loaded"):
             clf.predict("test")
 
     def test_predict_batch_before_build_raises(self):
-        from models.bert_classifier import BERTSentimentClassifier
+        from bert_classifier import BERTSentimentClassifier
         clf = BERTSentimentClassifier()
         with pytest.raises(RuntimeError, match="not loaded"):
             clf.predict_batch(["test"])
 
     def test_count_parameters_before_build(self):
-        from models.bert_classifier import BERTSentimentClassifier
+        from bert_classifier import BERTSentimentClassifier
         clf = BERTSentimentClassifier()
         result = clf.count_parameters()
         assert result == {}
@@ -158,7 +158,7 @@ class TestBERTClassifierInterface:
         """Validate the output schema of predict_batch without a real model."""
         import torch
         import numpy as np
-        from models.bert_classifier import BERTSentimentClassifier
+        from bert_classifier import BERTSentimentClassifier
 
         clf = BERTSentimentClassifier()
 

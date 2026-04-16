@@ -19,7 +19,7 @@ from typing import Dict, List
 
 ROOT        = Path(__file__).parent
 DATA_DIR    = ROOT / "data"
-MODELS_DIR  = ROOT / "models"
+MODELS_DIR  = ROOT / "saved_models"
 LOGS_DIR    = ROOT / "logs"
 
 # Saved artefacts

@@ -1,6 +1,6 @@
 """
-models/bert_classifier.py
---------------------------
+bert_classifier.py
+------------------
 DistilBERT-based sentiment classifier.
 
 Why DistilBERT?
@@ -44,7 +44,7 @@ class BERTSentimentClassifier:
 
     Usage:
         clf = BERTSentimentClassifier()
-        clf.load("models/bert_sentiment/")
+        clf.load("saved_models/bert_sentiment/")
         result = clf.predict("This product is excellent!")
     """
 

@@ -27,8 +27,8 @@ from config import (
 )
 from data_loader import ReviewDataset, label_distribution
 from evaluator import EvalResult, evaluate
-from models.bert_classifier import BERTSentimentClassifier
-from models.tfidf_classifier import TFIDFSentimentClassifier
+from bert_classifier import BERTSentimentClassifier
+from tfidf_classifier import TFIDFSentimentClassifier
 
 
 # ── TF-IDF trainer ────────────────────────────────────────────────────────────

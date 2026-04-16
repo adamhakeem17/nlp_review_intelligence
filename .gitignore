@@ -7,12 +7,8 @@ venv/
 env/
 *.DS_Store
 
-# Model weights and tokenizer files (large — use Git LFS or release assets)
-models/bert_sentiment/
-models/*.joblib
-models/label_map.json
-models/model_comparison.json
-models/checkpoints/
+# Saved model weights and tokenizer files (large — use Git LFS or release assets)
+saved_models/
 
 # Data
 data/sample/

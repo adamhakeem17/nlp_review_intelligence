@@ -7,7 +7,8 @@ Helpers referenced here:
 
     config.py           -> hyperparameters, paths, and label metadata
     data_loader.py      -> CSV loading, cleaning, sampling, ReviewDataset
-    models/             -> DistilBERT and TF-IDF classifier wrappers
+    bert_classifier.py  -> DistilBERT classifier wrapper
+    tfidf_classifier.py -> TF-IDF + LR classifier wrapper
     trainer.py          -> training loops, early stopping, evaluation helpers
     evaluator.py        -> metrics, model comparison, Plotly chart builders
     topic_extractor.py  -> spaCy-based keyphrase, entity, and aspect extraction

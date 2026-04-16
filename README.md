@@ -74,8 +74,8 @@ The baseline trains in seconds and surfaces `top_features()` per class for inter
 flowchart TD
     A[config.py — hyperparameters + paths] --> B
     B[data_loader.py — load_csv, clean_text, split_dataset, ReviewDataset] --> C & D
-    C[models/bert_classifier.py — DistilBERT wrapper, build/predict/save/load] --> E
-    D[models/tfidf_classifier.py — TF-IDF + LR pipeline, fit/predict/top_features] --> E
+    C[bert_classifier.py — DistilBERT wrapper, build/predict/save/load] --> E
+    D[tfidf_classifier.py — TF-IDF + LR pipeline, fit/predict/top_features] --> E
     E[trainer.py — BERTTrainer + TFIDFTrainer, early stopping, HF Trainer] --> F
     F[evaluator.py — evaluate, compare_models, Plotly charts] --> G
     B --> H[topic_extractor.py — KeyphraseExtractor, EntityExtractor, AspectAnalyser]
@@ -126,7 +126,6 @@ docker-compose up --build
 ## Testing
 
 ```bash
-pip install pytest pytest-cov
 pytest tests/ -v
 ```
 
@@ -184,13 +183,11 @@ nlp-review-intelligence/
 ├── topic_extractor.py         # Keyphrases, NER, aspect analysis (spaCy)
 ├── summariser.py              # Extractive + optional abstractive
 ├── predictor.py               # ReviewPredictor + CorpusAnalyser
-├── models/
-│   ├── __init__.py
-│   ├── bert_classifier.py     # DistilBERT wrapper
-│   └── tfidf_classifier.py    # TF-IDF + LR pipeline
+├── bert_classifier.py         # DistilBERT wrapper
+├── tfidf_classifier.py        # TF-IDF + LR pipeline
 ├── data/
 │   └── sample/                # Generated sample CSV (gitignored)
-├── models/                    # Saved weights (gitignored, use releases)
+├── saved_models/              # Saved weights (gitignored, use releases)
 ├── logs/
 ├── tests/
 │   ├── __init__.py

@@ -82,13 +82,13 @@ class ReviewPredictor:
 
     @classmethod
     def from_bert(cls, directory: Path | str = BERT_MODEL_DIR, cfg: InferenceConfig = inference_cfg) -> "ReviewPredictor":
-        from models.bert_classifier import BERTSentimentClassifier
+        from bert_classifier import BERTSentimentClassifier
         model = BERTSentimentClassifier.load(directory)
         return cls(model=model, model_name="DistilBERT", cfg=cfg)
 
     @classmethod
     def from_tfidf(cls, path: Path | str = TFIDF_MODEL_PATH, cfg: InferenceConfig = inference_cfg) -> "ReviewPredictor":
-        from models.tfidf_classifier import TFIDFSentimentClassifier
+        from tfidf_classifier import TFIDFSentimentClassifier
         model = TFIDFSentimentClassifier.load(path)
         return cls(model=model, model_name="TF-IDF + LogReg", cfg=cfg)
 
